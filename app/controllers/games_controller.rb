@@ -15,19 +15,6 @@ class GamesController < ApplicationController
 
   private
 
-  def sanitize_params(game_params)
-    game_date = Date.new(
-      game_params["played_on(1i)"].to_i,
-      game_params["played_on(2i)"].to_i,
-      game_params["played_on(3i)"].to_i
-    )
-    game_params.deep_merge(game: { played_on: game_date}).except(
-      "played_on(1i)",
-      "played_on(2i)",
-      "played_on(3i)"
-    )
-  end
-
   def game_params
     params.require(:game_form).permit(
       :score,
