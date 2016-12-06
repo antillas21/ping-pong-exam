@@ -4,7 +4,4 @@ class HomeController < ApplicationController
 
   def history
   end
-
-  def log
-  end
 end

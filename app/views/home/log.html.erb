@@ -2,4 +2,16 @@
 
 <div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
 
+<div class="col-sm-12">
+  <%= form_tag log_path, method: :post, class: "form form-horizontal" do %>
+    <div class="form-group">
+      <%= label_tag "Date played", nil, class: "control-label col-sm-3" %>
+      <div class="col-sm-9">
+        <%= date_select "game_form[game][played_on]" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="clearfix"></div>
+
 <%= image_tag('log_game.png') %>
