@@ -22,5 +22,18 @@ module PingpongLeaderboard
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.generators do |g|
+        g.test_framework :rspec
+        g.fixtures true
+        g.view_specs false
+        g.helper_specs false
+        g.routing_specs false
+        g.controller_specs true
+        g.stylesheets false
+        g.assets false
+        g.helper false
+        g.fixture_replacement 'factory_girl', :dir => 'spec/factories'
+    end
   end
 end
